@@ -1,20 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MA.BOSS STORE : parfums raffinés et créations artisanales au Burkina Faso.">
   <title>MA.BOSS STORE | Haute Parfumerie & Confection Artisanale</title>
-  
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- FontAwesome Icons -->
+
+  <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- CSS Personnalisé -->
+
+  <!-- CSS personnalisé -->
   <link rel="stylesheet" href="style.css">
 
   <script>
@@ -40,39 +44,44 @@
     }
   </script>
 </head>
+
 <body class="bg-brand-cream text-gray-800 font-sans flex flex-col min-h-screen">
 
   <!-- TOP BAR -->
   <div class="bg-brand-purple text-brand-gold text-xs font-medium text-center py-2 px-4 tracking-wider uppercase border-b border-brand-gold/20">
-    <i class="fa-solid fa-gem mr-2"></i> Fragrances d'exception confectionnées avec élégance • Commandes WhatsApp
+    <i class="fa-solid fa-gem mr-2"></i>
+    Fragrances d'exception confectionnées avec élégance • Commandes WhatsApp
   </div>
 
   <!-- NAVIGATION -->
   <header class="sticky top-0 z-40 bg-brand-cream/95 backdrop-blur-md border-b border-brand-gold/20 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
-        <!-- LOGO MA.BOSS STORE -->
-        <a href="#" onclick="showPage('home')" class="flex items-center gap-3 group">
+
+        <!-- LOGO -->
+        <a href="#" onclick="showPage('home'); return false;" class="flex items-center gap-3 group">
           <img src="image/logo.png" alt="MA.BOSS STORE Logo" class="h-12 w-auto object-contain transition-transform group-hover:scale-105">
           <div class="flex flex-col">
-            <span class="font-serif text-xl sm:text-2xl font-bold tracking-widest text-brand-purple group-hover:text-brand-gold transition">MA.BOSS</span>
+            <span class="font-serif text-xl sm:text-2xl font-bold tracking-widest text-brand-purple">MA.BOSS</span>
             <span class="text-[9px] tracking-[0.3em] font-bold text-brand-gold uppercase -mt-1">STORE</span>
           </div>
         </a>
 
+        <!-- MENU DESKTOP -->
         <nav class="hidden md:flex space-x-8 font-medium text-sm tracking-wide text-brand-purple">
-          <button onclick="showPage('home')" class="hover:text-brand-gold transition py-1">Accueil</button>
-          <button onclick="showPage('shop')" class="hover:text-brand-gold transition py-1">Boutique</button>
-          <button onclick="showPage('about')" class="hover:text-brand-gold transition py-1">À propos</button>
-          <button onclick="showPage('contact')" class="hover:text-brand-gold transition py-1">Contact</button>
+          <button onclick="showPage('home')" class="hover:text-brand-gold transition">Accueil</button>
+          <button onclick="showPage('shop')" class="hover:text-brand-gold transition">Boutique</button>
+          <button onclick="showPage('about')" class="hover:text-brand-gold transition">À propos</button>
+          <button onclick="showPage('contact')" class="hover:text-brand-gold transition">Contact</button>
         </nav>
 
         <div class="flex items-center space-x-5">
           <button onclick="toggleCartDrawer()" class="relative text-brand-purple hover:text-brand-gold transition p-2" aria-label="Panier">
             <i class="fa-solid fa-bag-shopping text-xl"></i>
-            <span id="cart-count" class="absolute -top-1 -right-1 bg-brand-gold text-brand-purple text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-brand-cream shadow-sm">0</span>
+            <span id="cart-count" class="absolute -top-1 -right-1 bg-brand-gold text-brand-purple text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-brand-cream">0</span>
           </button>
-          <button id="mobile-menu-btn" class="md:hidden text-brand-purple text-2xl focus:outline-none">
+
+          <button id="mobile-menu-btn" class="md:hidden text-brand-purple text-2xl" aria-label="Ouvrir le menu">
             <i class="fa-solid fa-bars"></i>
           </button>
         </div>
@@ -81,31 +90,47 @@
 
     <!-- MENU MOBILE -->
     <div id="mobile-menu" class="hidden md:hidden bg-brand-purple text-white px-4 pt-2 pb-6 space-y-3">
-      <button onclick="showPage('home'); toggleMobileMenu();" class="block w-full text-left py-2 border-b border-white/10 font-medium">Accueil</button>
-      <button onclick="showPage('shop'); toggleMobileMenu();" class="block w-full text-left py-2 border-b border-white/10 font-medium">Boutique</button>
-      <button onclick="showPage('about'); toggleMobileMenu();" class="block w-full text-left py-2 border-b border-white/10 font-medium">À propos</button>
-      <button onclick="showPage('contact'); toggleMobileMenu();" class="block w-full text-left py-2 font-medium">Contact</button>
+      <button onclick="showPage('home'); toggleMobileMenu();" class="block w-full text-left py-2 border-b border-white/10">Accueil</button>
+      <button onclick="showPage('shop'); toggleMobileMenu();" class="block w-full text-left py-2 border-b border-white/10">Boutique</button>
+      <button onclick="showPage('about'); toggleMobileMenu();" class="block w-full text-left py-2 border-b border-white/10">À propos</button>
+      <button onclick="showPage('contact'); toggleMobileMenu();" class="block w-full text-left py-2">Contact</button>
     </div>
   </header>
 
-  <!-- CONTENU PAGES (SPA) -->
+  <!-- CONTENU -->
   <main class="flex-grow">
-    
+
     <!-- ACCUEIL -->
     <section id="page-home" class="page-content">
       <div class="relative bg-brand-darkPurple text-white py-24 sm:py-32 px-4 overflow-hidden border-b border-brand-gold/20">
-        <div class="absolute inset-0 opacity-25 bg-[url('https://image=image/_ (15).jpeg')] bg-cover bg-center"></div>
+
+        <div class="absolute inset-0 opacity-25 bg-cover bg-center"
+             style="background-image: url('image/accueil.jpg');"></div>
+
         <div class="relative max-w-4xl mx-auto text-center">
-          <span class="text-brand-gold uppercase tracking-[0.3em] text-xs sm:text-sm font-semibold mb-4 block">Savoir-Faire & Parfumerie Raffinée</span>
+          <span class="text-brand-gold uppercase tracking-[0.3em] text-xs sm:text-sm font-semibold mb-4 block">
+            Savoir-Faire & Parfumerie Raffinée
+          </span>
+
           <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-            Révélez votre élégance, <br class="hidden sm:inline"><span class="italic text-brand-gold font-normal">laissez votre parfum parler.</span>
+            Révélez votre élégance,
+            <br>
+            <span class="italic text-brand-gold font-normal">laissez votre parfum parler.</span>
           </h1>
+
           <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Découvrez nos parfums de luxe élaborés et façonnés avec soin au Burkina Faso. Des fragrances riches et intemporelles pensées pour marquer les esprits.
+            Découvrez nos parfums de luxe élaborés et façonnés avec soin au Burkina Faso.
+            Des fragrances riches et intemporelles pensées pour marquer les esprits.
           </p>
+
           <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <button onclick="showPage('shop')" class="btn-gold shadow-lg">Découvrir nos parfums <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></button>
-            <button onclick="showPage('about')" class="border border-white/30 text-white hover:bg-white/10 transition px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide">Notre Univers</button>
+            <button onclick="showPage('shop')" class="btn-gold shadow-lg">
+              Découvrir nos parfums <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+            </button>
+
+            <button onclick="showPage('about')" class="border border-white/30 text-white hover:bg-white/10 transition px-8 py-3.5 rounded-full text-sm font-semibold">
+              Notre Univers
+            </button>
           </div>
         </div>
       </div>
@@ -113,34 +138,48 @@
       <!-- AVANTAGES -->
       <div class="bg-white py-12 border-b border-brand-gold/10 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+
           <div class="p-4">
-            <div class="w-12 h-12 bg-brand-cream text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-xl border border-brand-gold/20"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+            <div class="w-12 h-12 bg-brand-cream text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-xl border border-brand-gold/20">
+              <i class="fa-solid fa-spray-can-sparkles"></i>
+            </div>
             <h3 class="font-serif font-bold text-lg mb-1 text-brand-purple">Confection Artisanale</h3>
             <p class="text-xs text-gray-500">Créations olfactives délicates façonnées localement avec élégance.</p>
           </div>
+
           <div class="p-4">
-            <div class="w-12 h-12 bg-brand-cream text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-xl border border-brand-gold/20"><i class="fa-brands fa-whatsapp"></i></div>
-            <h3 class="font-serif font-bold text-lg mb-1 text-brand-purple">2 Lignes WhatsApp</h3>
-            <p class="text-xs text-gray-500">Service client réactif sur deux numéros pour traiter vos commandes.</p>
+            <div class="w-12 h-12 bg-brand-cream text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-xl border border-brand-gold/20">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <h3 class="font-serif font-bold text-lg mb-1 text-brand-purple">Service WhatsApp</h3>
+            <p class="text-xs text-gray-500">Deux lignes disponibles pour traiter vos commandes.</p>
           </div>
+
           <div class="p-4">
-            <div class="w-12 h-12 bg-brand-cream text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-xl border border-brand-gold/20"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="w-12 h-12 bg-brand-cream text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-xl border border-brand-gold/20">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
             <h3 class="font-serif font-bold text-lg mb-1 text-brand-purple">Livraison Soignée</h3>
             <p class="text-xs text-gray-500">Livraison rapide sur Ouagadougou et expédition dans tout le pays.</p>
           </div>
+
         </div>
       </div>
 
-      <!-- POPULAIRES -->
+      <!-- PRODUITS POPULAIRES -->
       <div class="max-w-7xl mx-auto px-4 py-16">
         <div class="text-center mb-12">
           <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-bold">Sélection Prestige</span>
           <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-purple mt-1">Nos Parfums Incontournables</h2>
           <div class="w-16 h-0.5 bg-brand-gold mx-auto mt-4"></div>
         </div>
+
         <div id="home-featured-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+
         <div class="text-center mt-12">
-          <button onclick="showPage('shop')" class="btn-outline-gold">Voir toute la collection <i class="fa-solid fa-angle-right ml-2"></i></button>
+          <button onclick="showPage('shop')" class="btn-outline-gold">
+            Voir toute la collection <i class="fa-solid fa-angle-right ml-2"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -152,7 +191,6 @@
         <p class="text-gray-600 max-w-xl mx-auto text-sm">Explorez nos fragrances d'exception élaborées avec passion et minutie.</p>
       </div>
 
-      <!-- FILTRES -->
       <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10">
         <button onclick="filterCategory('all')" class="filter-btn active" data-cat="all">Tous nos parfums</button>
         <button onclick="filterCategory('femme')" class="filter-btn" data-cat="femme">Pour Femme</button>
@@ -176,37 +214,42 @@
     <!-- CHECKOUT -->
     <section id="page-checkout" class="page-content hidden max-w-3xl mx-auto px-4 py-12">
       <div class="bg-white rounded-2xl shadow-md border border-brand-gold/20 p-6 sm:p-10">
+
         <h1 class="font-serif text-3xl font-bold text-brand-purple mb-2 text-center">Finaliser votre Commande</h1>
         <p class="text-xs text-gray-500 text-center mb-8">Remplissez vos coordonnées et choisissez le numéro WhatsApp sur lequel transmettre votre commande.</p>
 
         <form id="checkout-form" onsubmit="submitOrderToWhatsApp(event)" class="space-y-6">
+
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label class="block text-xs font-bold uppercase tracking-wider text-brand-purple mb-2">Nom & Prénom *</label>
-              <input type="text" id="cust-name" required placeholder="Ex: Aminata Diallo" class="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:border-brand-gold outline-none">
+              <input type="text" id="cust-name" required placeholder="Ex: Aminata Diallo" class="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm">
             </div>
+
             <div>
               <label class="block text-xs font-bold uppercase tracking-wider text-brand-purple mb-2">Téléphone *</label>
-              <input type="tel" id="cust-phone" required placeholder="Ex: +226 70 00 00 00" class="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:border-brand-gold outline-none">
+              <input type="tel" id="cust-phone" required placeholder="Ex: +226 70 00 00 00" class="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm">
             </div>
           </div>
+
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-brand-purple mb-2">Adresse de Livraison *</label>
-            <input type="text" id="cust-address" required placeholder="Ex: Ouagadougou, Ouaga 2000" class="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:border-brand-gold outline-none">
+            <input type="text" id="cust-address" required placeholder="Ex: Ouagadougou, Ouaga 2000" class="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm">
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label class="block text-xs font-bold uppercase tracking-wider text-brand-purple mb-2">Mode de Livraison *</label>
-              <select id="cust-delivery" class="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:border-brand-gold outline-none">
+              <select id="cust-delivery" class="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm">
                 <option value="Livraison à domicile (Ouagadougou)">Livraison à domicile (Ouagadougou)</option>
                 <option value="Expédition autre ville">Expédition vers autre ville</option>
                 <option value="Retrait en boutique">Retrait en boutique</option>
               </select>
             </div>
+
             <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-brand-purple mb-2">Envoyer sur WhatsApp vers : *</label>
-              <select id="cust-whatsapp-target" class="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:border-brand-gold outline-none">
+              <label class="block text-xs font-bold uppercase tracking-wider text-brand-purple mb-2">Envoyer sur WhatsApp vers *</label>
+              <select id="cust-whatsapp-target" class="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm">
                 <option value="1">Ligne Principale (+226 61 42 99 04)</option>
                 <option value="2">Ligne Secondaire (+226 64 32 48 22)</option>
               </select>
@@ -221,7 +264,11 @@
               <span id="checkout-summary-total" class="text-brand-gold">0 FCFA</span>
             </div>
           </div>
-          <button type="submit" class="w-full btn-whatsapp shadow-lg"><i class="fa-brands fa-whatsapp text-lg mr-2"></i> Confirmer ma commande sur WhatsApp</button>
+
+          <button type="submit" class="w-full btn-whatsapp shadow-lg">
+            <i class="fa-brands fa-whatsapp text-lg mr-2"></i>
+            Confirmer ma commande sur WhatsApp
+          </button>
         </form>
       </div>
     </section>
@@ -229,126 +276,245 @@
     <!-- A PROPOS -->
     <section id="page-about" class="page-content hidden max-w-5xl mx-auto px-4 py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+
         <div>
           <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-bold">L'Art Olfactif Local</span>
-          <h1 class="font-serif text-4xl font-bold text-brand-purple mt-2 mb-6 leading-tight">À Propos de <br>MA.BOSS STORE</h1>
+
+          <h1 class="font-serif text-4xl font-bold text-brand-purple mt-2 mb-6 leading-tight">
+            À Propos de <br>MA.BOSS STORE
+          </h1>
+
           <p class="text-gray-600 leading-relaxed mb-4 text-sm">
             Bienvenue chez <strong>MA.BOSS STORE</strong>. Imaginées et assemblées avec passion au Burkina Faso, nos créations olfactives unissent le raffinement de la haute parfumerie à l'élégance et au savoir-faire artisanal local.
           </p>
+
           <p class="text-gray-600 leading-relaxed text-sm">
             Chaque essence est méticuleusement travaillée pour offrir des notes durables, intenses et distinguées. Un parfum MA.BOSS est une véritable signature de confiance et d'élégance.
           </p>
         </div>
-        <div class="relative">
-          <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=800" alt="Flacon raffiné" class="rounded-2xl shadow-2xl border-4 border-white">
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=800"
+               alt="Flacon de parfum raffiné"
+               class="rounded-2xl shadow-2xl border-4 border-white">
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="page-contact" class="page-content hidden max-w-4xl mx-auto px-4 py-16">
+    <section id="page-contact" class="page-content hidden max-w-6xl mx-auto px-4 py-16">
+
       <div class="text-center mb-12">
-        <h1 class="font-serif text-4xl font-bold text-brand-purple">Contactez-nous</h1>
-        <p class="text-gray-600 text-sm mt-2">Choisissez l'une de nos lignes WhatsApp directes ou envoyez-nous un message.</p>
+        <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-bold">Nous sommes à votre écoute</span>
+        <h1 class="font-serif text-4xl font-bold text-brand-purple mt-2">Contactez-nous</h1>
+        <p class="text-gray-600 text-sm mt-2">Commandes, renseignements et collaborations : retrouvez-nous ici.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-        <!-- Numéro 1 -->
-        <a href="https://wa.me/22661429904" target="_blank" class="bg-white p-6 rounded-2xl shadow-sm border border-brand-gold/10 text-center hover:shadow-md transition">
-          <div class="w-12 h-12 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"><i class="fa-brands fa-whatsapp"></i></div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+
+        <!-- WHATSAPP 1 -->
+        <a href="https://wa.me/22661429904" target="_blank" rel="noopener noreferrer"
+           class="bg-white p-6 rounded-2xl shadow-sm border border-brand-gold/10 text-center hover:shadow-lg hover:-translate-y-1 transition">
+          <div class="w-12 h-12 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
           <h3 class="font-serif font-bold text-lg text-brand-purple">WhatsApp Ligne 1</h3>
           <p class="text-xs text-gray-500 mt-1">+226 61 42 99 04</p>
         </a>
-        <!-- Numéro 2 -->
-        <a href="https://wa.me/22664324822" target="_blank" class="bg-white p-6 rounded-2xl shadow-sm border border-brand-gold/10 text-center hover:shadow-md transition">
-          <div class="w-12 h-12 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"><i class="fa-brands fa-whatsapp"></i></div>
+
+        <!-- WHATSAPP 2 -->
+        <a href="https://wa.me/22664324822" target="_blank" rel="noopener noreferrer"
+           class="bg-white p-6 rounded-2xl shadow-sm border border-brand-gold/10 text-center hover:shadow-lg hover:-translate-y-1 transition">
+          <div class="w-12 h-12 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
           <h3 class="font-serif font-bold text-lg text-brand-purple">WhatsApp Ligne 2</h3>
           <p class="text-xs text-gray-500 mt-1">+226 64 32 48 22</p>
         </a>
-        <!-- Email -->
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-gold/10 text-center">
-          <div class="w-12 h-12 bg-brand-cream text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-xl"><i class="fa-solid fa-envelope"></i></div>
+
+        <!-- INSTAGRAM -->
+        <a href="https://www.instagram.com/VOTRE_COMPTE/"
+           target="_blank" rel="noopener noreferrer"
+           class="bg-white p-6 rounded-2xl shadow-sm border border-brand-gold/10 text-center hover:shadow-lg hover:-translate-y-1 transition">
+          <div class="w-12 h-12 bg-pink-50 text-pink-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-brand-purple">Instagram</h3>
+          <p class="text-xs text-gray-500 mt-1">Suivez notre univers</p>
+          <span class="text-brand-gold text-xs font-semibold mt-3 block">Nous suivre <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
+        </a>
+
+        <!-- FACEBOOK -->
+        <a href="https://www.facebook.com/reel/1702123720882558?sfnsn=wa&mibextid=6AJuK9"
+           target="_blank" rel="noopener noreferrer"
+           class="bg-white p-6 rounded-2xl shadow-sm border border-brand-gold/10 text-center hover:shadow-lg hover:-translate-y-1 transition">
+          <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+            <i class="fa-brands fa-facebook-f"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-brand-purple">Facebook</h3>
+          <p class="text-xs text-gray-500 mt-1">Rejoignez notre communauté</p>
+          <span class="text-brand-gold text-xs font-semibold mt-3 block">Nous suivre <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
+        </a>
+
+        <!-- EMAIL -->
+        <a href="mailto:compsalimata19@gmail.com"
+           class="bg-white p-6 rounded-2xl shadow-sm border border-brand-gold/10 text-center hover:shadow-lg transition">
+          <div class="w-12 h-12 bg-brand-cream text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
           <h3 class="font-serif font-bold text-lg text-brand-purple">Email</h3>
           <p class="text-xs text-gray-500 mt-1">compsalimata19@gmail.com</p>
-        </div>
-        <!-- Boutique -->
+        </a>
+
+        <!-- BOUTIQUE -->
         <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-gold/10 text-center">
-          <div class="w-12 h-12 bg-brand-cream text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-xl"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="w-12 h-12 bg-brand-cream text-brand-gold rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
           <h3 class="font-serif font-bold text-lg text-brand-purple">Boutique</h3>
           <p class="text-xs text-gray-500 mt-1">Ouagadougou, Ouaga 2000, Koudougou, Loumbila</p>
         </div>
+
       </div>
     </section>
+
   </main>
 
-  <!-- DRAWER PANIER LATERAL -->
+  <!-- PANIER LATERAL -->
   <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none">
+
     <div id="cart-backdrop" onclick="toggleCartDrawer()" class="absolute inset-0 bg-brand-purple/60 backdrop-blur-sm opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+
     <div id="cart-panel" class="absolute inset-y-0 right-0 max-w-full flex pl-10 transform translate-x-full transition-transform duration-300 pointer-events-none">
+
       <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col pointer-events-auto">
+
         <div class="p-6 bg-brand-purple text-white flex justify-between items-center border-b border-brand-gold/20">
-          <h2 class="font-serif text-xl font-bold flex items-center"><i class="fa-solid fa-bag-shopping mr-3 text-brand-gold"></i> Mon Panier</h2>
-          <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
+          <h2 class="font-serif text-xl font-bold flex items-center">
+            <i class="fa-solid fa-bag-shopping mr-3 text-brand-gold"></i> Mon Panier
+          </h2>
+          <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-white text-xl" aria-label="Fermer le panier">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
+
         <div id="drawer-cart-items" class="flex-grow p-6 overflow-y-auto space-y-4 divide-y divide-gray-100"></div>
+
         <div class="p-6 bg-brand-cream border-t border-brand-gold/20">
           <div class="flex justify-between items-center mb-4">
             <span class="text-sm font-semibold text-gray-600">Total :</span>
             <span id="drawer-cart-total" class="font-serif text-2xl font-bold text-brand-purple">0 FCFA</span>
           </div>
+
           <div class="space-y-3">
             <button onclick="toggleCartDrawer(); showPage('checkout');" class="w-full btn-gold shadow-md">Commander maintenant</button>
             <button onclick="toggleCartDrawer(); showPage('cart');" class="w-full border border-brand-purple text-brand-purple hover:bg-brand-purple hover:text-white transition py-2.5 rounded-full text-xs font-bold uppercase tracking-wider">Voir le panier complet</button>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 
   <!-- FOOTER -->
   <footer class="bg-brand-darkPurple text-white pt-16 pb-8 border-t border-brand-gold/20">
-    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+
+      <!-- COLONNE 1 : LOGO -->
       <div>
-        <!-- LOGO FOOTER -->
-        <a href="#" onclick="showPage('home')" class="flex items-center gap-3 mb-4">
-          <img src="logo.png" alt="MA.BOSS STORE Logo" class="h-10 w-auto object-contain invert brightness-200">
+        <a href="#" onclick="showPage('home'); return false;" class="flex items-center gap-3 mb-4">
+          <img src="image/logo.png" alt="Logo MA.BOSS STORE" class="h-10 w-auto object-contain">
           <div class="flex flex-col">
             <span class="font-serif text-xl font-bold tracking-widest text-white">MA.BOSS</span>
-            <span class="text-[8px] tracking-[0.3em] font-bold text-brand-gold uppercase -mt-1">STORE</span>
+            <span class="text-[9px] tracking-[0.3em] font-bold text-brand-gold uppercase">STORE</span>
           </div>
         </a>
-        <p class="text-xs text-gray-400">Haute parfumerie et création artisanale d'exception.</p>
+
+        <p class="text-xs text-gray-400 max-w-xs leading-relaxed">
+          Haute parfumerie et création artisanale d'exception.
+          L'élégance à chaque goutte.
+        </p>
       </div>
+
+      <!-- COLONNE 2 : NAVIGATION -->
       <div>
         <h4 class="font-serif font-bold text-brand-gold mb-4 uppercase text-xs">Navigation</h4>
-        <ul class="space-y-2 text-xs text-gray-300">
+        <ul class="space-y-3 text-xs text-gray-300">
           <li><button onclick="showPage('home')">Accueil</button></li>
           <li><button onclick="showPage('shop')">Boutique</button></li>
           <li><button onclick="showPage('about')">À propos</button></li>
           <li><button onclick="showPage('contact')">Contact</button></li>
         </ul>
       </div>
+
+      <!-- COLONNE 3 : CATEGORIES -->
       <div>
         <h4 class="font-serif font-bold text-brand-gold mb-4 uppercase text-xs">Catégories</h4>
-        <ul class="space-y-2 text-xs text-gray-300">
-          <li><button onclick="showPage('shop'); filterCategory('femme');">Parfums Femme</button></li>
-          <li><button onclick="showPage('shop'); filterCategory('homme');">Parfums Homme</button></li>
-          <li><button onclick="showPage('shop'); filterCategory('mixte');">Parfums Mixte</button></li>
+        <ul class="space-y-3 text-xs text-gray-300">
+          <li><button onclick="showPage('shop'); filterCategory('femme')">Parfums Femme</button></li>
+          <li><button onclick="showPage('shop'); filterCategory('homme')">Parfums Homme</button></li>
+          <li><button onclick="showPage('shop'); filterCategory('mixte')">Parfums Mixte</button></li>
+          <li><button onclick="showPage('shop'); filterCategory('nouveaute')">Nouveautés</button></li>
         </ul>
       </div>
+
+      <!-- COLONNE 4 : RESEAUX SOCIAUX -->
       <div>
-        <h4 class="font-serif font-bold text-brand-gold mb-4 uppercase text-xs">WhatsApp Direct</h4>
-        <div class="flex space-x-3 text-lg">
-          <a href="https://wa.me/22661429904" target="_blank" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-purple transition"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="https://wa.me/22664324822" target="_blank" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-purple transition"><i class="fa-brands fa-whatsapp"></i></a>
+        <h4 class="font-serif font-bold text-brand-gold mb-4 uppercase text-xs">Suivez-nous</h4>
+
+        <p class="text-xs text-gray-400 mb-4">
+          Retrouvez nos nouveautés, collections et offres exclusives.
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+
+          <a href="https://wa.me/22661429904"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="WhatsApp"
+             class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-purple transition">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+
+          <a href="https://wa.me/22664324822"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="WhatsApp ligne 2"
+             class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-purple transition">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+
+          <a href="https://www.instagram.com/VOTRE_COMPTE/"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Instagram"
+             class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-purple transition">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="https://www.facebook.com/VOTRE_PAGE/"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Facebook"
+             class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-purple transition">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
         </div>
+
+        <p class="text-xs text-gray-500 mt-4">MA.BOSS STORE – Burkina Faso</p>
       </div>
+
     </div>
-    <div class="max-w-7xl mx-auto px-4 border-t border-white/10 pt-6 text-center text-xs text-gray-500">&copy; 2026 MA.BOSS STORE. Tous droits réservés.</div>
+
+    <!-- COPYRIGHT -->
+    <div class="max-w-7xl mx-auto px-4 border-t border-white/10 pt-6 text-center text-xs text-gray-500">
+      &copy; 2026 MA.BOSS STORE. Tous droits réservés.
+    </div>
+
   </footer>
 
-  <!-- Scripts -->
+  <!-- SCRIPTS -->
   <script src="products.js"></script>
   <script src="cart.js"></script>
   <script src="app.js"></script>
+
 </body>
 </html>
