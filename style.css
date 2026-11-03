@@ -1,0 +1,63 @@
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #AA8828 100%);
+  color: #1E0B25;
+  font-weight: 700;
+  padding: 0.875rem 2rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-gold:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4);
+}
+.btn-whatsapp {
+  background-color: #25D366;
+  color: white;
+  font-weight: 700;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-whatsapp:hover {
+  background-color: #1EBE5D;
+  transform: translateY(-2px);
+}
+.btn-outline-gold {
+  border: 1px solid #D4AF37;
+  color: #1E0B25;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+.btn-outline-gold:hover {
+  background-color: #D4AF37;
+  color: #1E0B25;
+}
+.filter-btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: white;
+  color: #1E0B25;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  transition: all 0.2s ease;
+}
+.filter-btn.active, .filter-btn:hover {
+  background-color: #1E0B25;
+  color: #D4AF37;
+  border-color: #1E0B25;
+}
